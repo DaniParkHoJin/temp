@@ -86,12 +86,17 @@ src/main/webapp/WEB-INF
 		ie=utf8
 		&
 		query=%EB%B8%94%EB%A1%9C%EA%B7%B8
+		
+		↑ 쿼리스트링(querystring) 질의 물음표 뒤에
 	
-	
+		요청 데이터가 주소에 포함됨
+		요청 바디는 비어 있다.
 	
 	2) POST
 
-
+		-서버에 데이터 등록, 변경
+		
+		
 서블릿(Servlet)
 1. 서블릿(Servlet)의 개요
 2. 서블릿(Servlet) 클래스 작성하기
