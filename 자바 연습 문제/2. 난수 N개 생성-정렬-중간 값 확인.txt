@@ -1,0 +1,18 @@
+조별 과제
+문항2.
+- 정수로 된 난수 n개 발생 시킵니다.
+- 발생한 정수를 작은 순서대로 나열 한 후 중간값을 구하시오
+- n개가 홀수라면 중간값은 1개, 짝수라면 중간값은 2개가 됩니다.
+
+참고)
+난수는 java.lang.Math의 random() 함수나 java.util.Random 클래스를 활용 할 수 있습니다.
+학습 URL1 - https://github.com/yonggyo1125/curriculum300H/tree/main/1.JAVA(84%EC%8B%9C%EA%B0%84)/11%EC%9D%BC%EC%B0%A8(3h)%20-%20%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC%2C%20java.lang%ED%8C%A8%ED%82%A4%EC%A7%80%2C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%ED%81%B4%EB%9E%98%EC%8A%A4#javalangmath-%ED%81%B4%EB%9E%98%EC%8A%A4
+
+학습 URL2 -
+https://github.com/yonggyo1125/curriculum300H/tree/main/1.JAVA(84%EC%8B%9C%EA%B0%84)/11%EC%9D%BC%EC%B0%A8(3h)%20-%20%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC%2C%20java.lang%ED%8C%A8%ED%82%A4%EC%A7%80%2C%20%EC%9C%A0%EC%9A%A9%ED%95%9C%ED%81%B4%EB%9E%98%EC%8A%A4#javautilrandom-%ED%81%B4%EB%9E%98%EC%8A%A4
+
+제출 안내
+- 일정 시간동안 조원들 각자 문항에 대한 답을 생각해 보고 조별 토의를 통해 좋은 문제 해결 방식을 결정할 것
+- 문항의 해결 방식에 대해 자세하게 코드별로 설명하여 제출할 것
+- 제출 기한 :  9월 14일 오후 11시 까지
+- 제출 이메일 : yonggyo00@kakao.com

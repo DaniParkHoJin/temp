@@ -1,0 +1,77 @@
+Promise
+1. 비동기 처리
+	동기 : A -> B -> C
+	- 자바스크립트는 싱글 쓰레드, 동기식 지양
+	비동기
+	- 자바스크립트에서 권장 방식
+	- 이벤트 주도 방식의 비동기 처리
+	- setTimeout
+	
+2. 비동기 순서 실행 처리
+
+Ajax(Asychonomous JavaScript and XML)
+
+XmlHttpRequest 생성자
+
+
+
+
+
+웹 브라우저 객체
+1. 클라이언트 측 자바스크립트
+	1) 웹 브라우저에서 자바스크립트가 하는 일
+	- 동적인 부분 클릭하면 변경되는 부분
+	
+	2) 웹 브라우저에서 자바스크립트 실행 순서
+	- 
+	3) async와 defer 속성
+
+2. CSS와 렌더링
+3. 웹 브라우저 렌더링 엔진과 자바스크립트 엔진
+
+
+Window 객체
+	1. Window 객체의 주요 프로퍼티
+2. Window 객체의 주요 메서드
+
+Location 객체
+1. Location 객체의 프로퍼티
+2. Location 객체의 메서드
+
+History 객체
+1. History 객체의 프로퍼티
+2. History 객체의 메서드
+
+Naviator 객체
+1. Navigator 객체의 주요 프로퍼티
+2. Navigator 객체의 메서드
+
+Screen 객체
+1. Screen 객체의 주요 프로퍼티
+
+창 제어하기
+1. 창 여닫기
+open
+
+2. open 메서드로 설정할 수 있는 옵션의 이름
+width, height, location, scrollbars, toolbar, status, menubar
+
+3. 창 제어하기
+1) moveBy(..), moveTo(...)
+2) resizeBy(..), resizeTo(...)
+3) scrollBy(..), scrollTo(...)
+
+4. 다른 창 참조하기
+
+
+
+
+
+
+EMCAScript Core
+1. 내장 생성자 객체
+	Object, String, Number, Array, Boolean ...
+2. 내장 객체
+	Math, JSON
+호스트 객체
+	-웹 브라우저 객체

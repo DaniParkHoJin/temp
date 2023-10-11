@@ -1,0 +1,157 @@
+컬렉션 프레임워크(Collections Framework)
+
+	데이터를 추가, 조회, 삭제하는 데이터를 다루기 위한 편의 기능
+
+	컬렉션(Collections) - 데이터 군집, 데이터 모음
+	프레임워크(Framework) : 표준화된 설계
+
+	데이터 군을 다루는데 필요한 클래스를 표준화서 설계(interface)
+
+
+1. 컬렉션 프레임워크 핵심 인터페이스 
+
+	Collection 인터페이스(List, Set)와 Map으로 구분 가능하다.
+	List, Set은 자료를 모은 군집의 의미로 Collection으로 묶음.
+
+	1) List : 순차 자료 구조
+		- 순서가 있는 자료 구조.
+		- 값의 중복을 허용한다.
+		
+		추가
+			add(E e)
+			add(in index, E e)
+			addAll(Collection<E> ...)
+			
+		수정
+			set(int index, E e)
+					
+		삭제
+			E remove(int index)
+			boolean remove(Object o)
+			
+		조회
+			E get(int index)
+			
+			boolean contains(Object o)
+			boolean containsAll(Collection<E> ...)
+			int indexOf(...)
+			int lastindexOf(...)
+		
+		 기타
+			int size() : 요소의 갯수
+		
+		구현 클래스
+			1) ArrayList
+				- 배열을 구현한 클래스
+				- 조회 속도는 빠르다
+				- 공간의 크기가 변경되거나 순서가 변경되는 추가, 수정, 삭제 -> 매번 새로운 배열이 생성 -> 성능 저하 문제
+				- 정해진 공간 이상인 경우 배로 공간이 생긴다.
+				- 스택의 구현체를 만들기 적합한 구조
+				
+			2) LinkedList
+				- 이전, 다음 요소의 주소가 연결되어 있다.
+				- 순서가 변경될 수 있는 추가, 수정, 삭제가 빠르다.
+				- 조회 속도는 ArrayList 보다 느리다.
+				- Queue 인터페이스의 구현체
+					offer(E e) : 가장 끝에 추가
+					e poll() : 앞의 요소를 꺼내올 때			
+			
+			3) Vector
+					
+			4) Stack
+				E pop() : 끝에 요소를 꺼내기
+				push(E item) : 끝에 추가
+
+
+	2) Set : 집합 자료 구조
+		- 중복을 허용하지 않는다.
+		- 순서를 고려하지 않는 자료 구조 index가 없다.
+		- 수정이 불가하다
+		- 검색을 위한 구조(트리)로 나열된다
+		
+		추가
+			add(E e)
+			addAll(Collection<E> ...)
+			
+		삭제
+			remove(Object o)
+			RemovaAll(Collection<E> ...)
+			
+		조회
+			boolean contains(...)
+			boolean containsAll(Collection<E> ...)
+			
+		기타
+			int size() : 요소 갯수
+			boolean ieEmpty() : 요소가 비어있는 상태 인지 확인
+			clear() : 전체 비우기
+			
+		구현클래스
+			HashSet, TreeSet(정렬 가능) -> 정렬 기준이 정의되어야 한다.
+			
+			
+	3) Map : 사전 형태의 자료 구조
+		- key(키)와 value(값)의 순서쌍 구조
+		- key(키) : 값을 찾기 위한 키워드, 중복 X(Set - 집합 자료)
+		- value(값) : 중복 가능(Collection 자료)
+
+		추가
+			put(K k, V v)
+			putIfAbsent(K k, V v) : K가 없을 때만 v값을 추가
+			
+		수정
+			put(K k, V v)
+			replace(K k, V v)
+			replace(K k, V old, V new)
+			
+		삭제
+			remove(Object k)
+			
+		조회
+			V get(Object k)
+			V getOrDefault(Object, k, V v)
+			
+			Set(k) keySet() : 전체 키값
+			Collection<V> values() : 전체 값
+			boolean containsKey(Object k)
+			boolean containsValue(Object v)
+			
+		기타
+			int size(): 요소 갯수
+			
+		구현 클래스
+			HashMap, TreeMap
+		
+2. Stack과 Queue
+	Stack : 데이터를 쌓아 올린 형태의 자료구조 LIFO(Last In First Out)
+	
+	Queue : 먼저 들어온 것이 먼저 나가는 자료구조 FIFO(First In First Out)
+	
+	
+3. Iterator, ListIterator, Enumeration
+	반복자
+	Iterator : 컬렉션의 요소에 접근할 때 한 방향으로만 이동
+	
+	ListIterator : Iterator와 달리 양방향으로 이동
+	
+	Enumeration : 
+
+4. Comparator와 Comparable
+
+	java.lang.Comparable : 정렬의 기본 기준(Natural Order)
+		int compareTo(T o)
+			현재 객체의 숫자 - 비교대상 객체 숫자 : 오름차순
+			비교 대상 객체 - 현재 객체 : 내림차순
+
+	java.util.Comparator : 대안적인 정렬 기준
+
+5. Arrays
+	java.util 패키지
+	배열의 편의 기능
+
+6. Collections
+	java.util 패키지
+	Collection의 편의 기능
+
+JDK14에 추가된 기능
+Record 클래스

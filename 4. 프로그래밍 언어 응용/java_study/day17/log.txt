@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at exam01.Ex09.main(Ex09.java:13)
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at exam01.Ex09.main(Ex09.java:13)

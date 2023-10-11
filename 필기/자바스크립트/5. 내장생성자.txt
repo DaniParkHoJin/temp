@@ -1,0 +1,125 @@
+ECMAScript Core : 표준 자바스크립트 객체
+
+표준적인 객체(자바스크립트 엔진을 탑재하면 모두 사용할 수 있다)
+	1) 내장 생성자 - 빼대가 될 수 있다. 
+	
+	2) 내장 객체 - 객체 생성 없이 처음부터 사용할 수 있는 객체
+	- Math
+	- JSON
+		- stringify(...)
+			자바스크립트 객체 -> JSON문자열
+		- parse(...)
+			JSON문자열 -> 자바스트립트 객체
+			
+			
+			
+			
+호스트 객체
+	- 런타임 종류에 따른 특성 있는 객체
+	- 웹브라우저 객체(브라우저 통제 관련)
+		window
+			location : 주소 통제, 기능
+			history
+			screen
+			navigator
+			document
+
+
+
+
+내장 생성자
+- 자바스크립트에 처음부터 포함된 내장 생성자
+1. Object
+2. String
+	- 원시 래퍼 객체 
+3. Number
+	- 원시 래퍼 객체
+	
+	inNaN() 동작방식
+		- Number(값) : NaN 반환 -> true, NaN 반환 X -> false
+		- 문자열로 된 숫자라도 Number로 변환에 문제가 없으면 false
+						
+4. Boolean
+	- 논리 값으로 변환
+	- false로 인식하는 값 -> false (0, "", undefined, null ...)
+	- true로 인식하는 값 -> true (false로 인식하는 값 이외의 값)	
+5. Array
+6. Date
+
+	get : 조회
+	
+	getYear() -> 2자리 기준의 년도
+	getFullYear() -> 4자리 기준의 년도
+	getMonth() -> 월 (0~11) ******
+	getDate() -> 일
+	
+	getHours() -> 시
+	getMinutes() -> 분
+	getSeconds() -> 초
+	
+	getDay() -> 요일(0~6), 0 : 일요일, 6 : 토요일
+	
+	set : 설정(변경시)
+	
+	Date.now() -> 현재 시간의 epochTime 반환/ timestamp
+				1970년 1월 1일 자정부터 1/1000로 카운팅한 정수
+	getTime() -> date 객체의 
+	
+7. Function
+	모든 함수는 Function의 하위 객체
+8. RegExp
+9. Error
+	
+
+ES6부터 추가된 주요 내장 생성자
+1. Symbol  : 중복을 방지 하기 위해 사용한다.
+2. Promise : 비동기 처리 관리 수단
+	자바스트립트는 싱글 스레드 모델이다.
+	- 다중 동시 작업 X
+	- 이벤트 주도 비동기 방식
+	
+	동기 : 순서대로 실행
+	비동기 : 순서대로 시행 X 
+
+	setTimeout(function() {
+		//실행 될 함수
+	}, 지연시간);
+
+3. Map
+4. Set
+
+기타 내장 객체
+JSON
+MATH 
+
+전역 객체
+1. 전역 프로퍼티
+	- undefined
+		값이 지정되지 않음
+		변수만 선언하고 값을 초기화하지 않으면 기본값이 undefined
+	- NaN
+		Not a Number
+		문자열이 숫자 변환시 숫자 형식이 아니면 반환값이 NaN
+	- Infinity
+		0으로 나눈 경우
+
+2. 생성자 
+	Object(), String(), Number() 등
+
+3. 전역 함수
+	parseInt(), parseFloat(), isNaN() 등 
+
+4. 내장 객체
+	Math, JSON, Reflect
+
+
+자바 스크립트 객체의 분류
+
+
+
+
+
+참고)
+
+	parse... : 변환메서드
+	is... : ~인지 아닌지
