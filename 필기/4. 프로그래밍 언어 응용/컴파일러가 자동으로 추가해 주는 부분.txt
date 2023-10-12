@@ -1,0 +1,9 @@
+컴파일러가 자동 추가해주는 부분
+1. import java.lang.*;
+2. extends java.lang.Object
+3. 기본생성자
+4. super()
+5. 인터페이스에서 메서드 명 - public abstract
+6. 인터페이스에서 정의된 변수 - public abstrct
+7. 지역 내부클래스 : 지역변수의 상수화
+8. toString()
