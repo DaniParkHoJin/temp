@@ -73,10 +73,12 @@ src/main/webapp/WEB-INF
 
 5. HTTP 요청 메서드
 	
+
 	OPTIONS : 요청 처리 전 통신 옵션 설정
 	
 	1) GET
 		- 서버의 자원 조회 : 검색
+
 		https://search.naver.com/search.naver
 		?
 		where=nexearch
@@ -87,12 +89,15 @@ src/main/webapp/WEB-INF
 		&
 		ie=utf8
 		&
-		query=%EB%B8%94%EB%A1%9C%EA%B7%B8
+
 	
 		요청 데이터가 주소에 포함, 요청 바디는 비어 있다.
+		
+		↑ 쿼리스트링(querystring) 질의 물음표 뒤에
+	
+		요청 데이터가 주소에 포함됨
+		요청 바디는 비어 있다.
 		DELETE
-	
-	
 	2) POST
 		- 서버에 데이터 등록, 변경
 		요청 헤더
@@ -154,4 +159,19 @@ HttpservletResponse : 응답
 	
 	do...(...) 매 요청이 들어올 때마다 호출
 	
-	- destroy() 메서드 호출 - 1번 호출 - 서블릿 객체가 소멸 전 / 자원해제
+	- destroy() 메서드 호출 - 1번 호출 - 서블릿 객체가 소멸 전 / 자원해제		
+	
+	
+	2) POST
+
+		-서버에 데이터 등록, 변경
+		
+		
+서블릿(Servlet)
+1. 서블릿(Servlet)의 개요
+2. 서블릿(Servlet) 클래스 작성하기
+3. web.xml 파일에 서블릿(Servlet) 등록하기
+4. XML 문법의 기초
+5. 웹 브라우저로부터 데이터 입력 받기
+6. init메서드와  destroy 메서드
+
