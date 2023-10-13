@@ -90,7 +90,6 @@ src/main/webapp/WEB-INF
 		ie=utf8
 		&
 		↑ 쿼리스트링(querystring) 질의 물음표 뒤에
-		↑ 쿼리스트링(querystring) 질의 물음표 뒤에
 	
 		요청 데이터가 주소에 포함, 요청 바디는 비어 있다.
 		
