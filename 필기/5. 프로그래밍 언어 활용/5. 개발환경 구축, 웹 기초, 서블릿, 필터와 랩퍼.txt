@@ -180,11 +180,19 @@ HttpservletResponse : 응답
 
 6. init메서드와  destroy 메서드
 
-
 서블릿 생명 주기 
 
 객체 생성 
 	init() 메서드 호출 - 1번만 호출 / 서블릿 초기화시에 해야될 작업, 설정 작업 
+
+	설정
+	web.xml
+	<init-param>
+            <param-name>key1</param-name>
+            <param-value>value1</param-value>
+        </init-param>
+
+
 
 	do....(...) : 매 요청시 마다 호출 
 
