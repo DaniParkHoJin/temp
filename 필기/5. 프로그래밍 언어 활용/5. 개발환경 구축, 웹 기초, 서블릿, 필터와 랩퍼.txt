@@ -221,4 +221,8 @@ HttpservletResponse : 응답
 	- 필터 체인(filter chain)
 	
 4. 필터 클래스의 init 메서드와 destroy 메서드
-5. 래퍼 클래스 작성 및 적용하기
+	init() : 필터 객체가 생성이 되고 처음 1번 호출 -> 설정
+	destroy :  필터 객체가 소멸 전 1번 호출
+	
+	
+5. 래퍼 클래스 작성 및 적용하기\
