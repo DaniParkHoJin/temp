@@ -63,7 +63,7 @@ JSP 생명 주기
 	
 디렉티브 태그
 <%@ ..... %>
-- page 
+- page : JSP 페이지 속성에 관한
 	
 	errorPage -> 에러 출력 페이지 설정
 	isErrorPage="true" : 번역될때 exception 내장 객체 생성 
@@ -74,20 +74,23 @@ JSP 생명 주기
 - include
 - taglib 
 
-1. page 디렉티브 태그의 기능과 사용법
-2. include 디렉티브 태그의 기능과 사용법
-	file="jsp|HTML 경로"
-	<%@ include file="..." %>
+	1. page 디렉티브 태그의 기능과 사용법
 	
-3. taglib 디렉티브 태그의 기능과 사용법
-	- 태그 라이브러리 
-	JSTL (JSP Standard Tag Libaray) - 3.0
-	uri="jakarta.tags.core"
+	2. include 디렉티브 태그의 기능과 사용법
+		file="jsp|HTML 경로"
+		<%@ include file="..." %>
+	
+	3. taglib 디렉티브 태그의 기능과 사용법
+		- 태그 라이브러리 
+		JSTL (JSP Standard Tag Libaray) - 3.0
+		uri="jakarta.tags.core"
 	
 	- JSTL 3.0
 	
 		- jstl-api 
 		- jstl 구현체 
+		
+	참고) 과거에는 uri="http://java.sun.com/jsp/jstl/core"	
 	
 JSP의 주석 처리
 <%-- 주석 --%> : 번역 X
