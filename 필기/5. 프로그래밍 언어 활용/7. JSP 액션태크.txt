@@ -9,16 +9,25 @@
 
 	1. forward 액션 태그의 기능과 사용법
 		<jsp:forward page="이동할 페이지 - JSP, html, text, servlet 경로"  />
-		 - 페이지 이동 / 버퍼의 통제 
+		 - 페이지 이동(정확히 이동은 아니다 / 출력 버퍼의 통제) 실제로 페이지가 이동되지 않는다.
 		 - 기존 출력 버퍼를 취소, page에 정의된 경로의 출력 결과물을 버퍼에 출력하고 비운다.
 
 	2. include 액션 태그의 기능과 사용법
 		- 페이지 추가 / 버퍼의 통제
+		<jsp:include page="이동할 페이지 - JSP, html, text, servlet 경로"  />
+		기존 버퍼를 취소하지 않는다.
+		
+	forward, include -> 요청 처리 중에 버퍼에 추가
 
 	3. include 액션 태그와 include 디렉티브 태그의 차이
 	
-	4. param 액션 태그의 기능과 사용법
+	4. param 액션 태그의 기능과 사용법 <- 요청 데이터를 받는다
 		- param 액션 태그는 현재 JSP 페이지에서 다른 페이지에 정보를 전달하는 태그
+		
+	서블릿
+		RequestDispathcer 인터페이스
+			forward(HttpServletRequest, HttpServletResponse): <jsp:forward .../>
+			include(HttpServletRequest, HttpServletResponse): <jsp:include .../>
 		
 	5. 자바빈즈 액션 태그의 기능과 사용법
 		1) 자바빈즈 :  데이터 표현을 목적으로 하는 자바 클래스
