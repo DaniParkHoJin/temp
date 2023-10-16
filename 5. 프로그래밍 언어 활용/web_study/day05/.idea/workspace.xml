@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51d5fbe-b3bc-4731-bda0-7099358271c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam01/ex01.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day04/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day04/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/hello.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hello.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../필기/5. 프로그래밍 언어 활용/6. JSP.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../필기/5. 프로그래밍 언어 활용/6. JSP.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
