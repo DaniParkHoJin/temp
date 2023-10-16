@@ -29,9 +29,30 @@
 			forward(HttpServletRequest, HttpServletResponse): <jsp:forward .../>
 			include(HttpServletRequest, HttpServletResponse): <jsp:include .../>
 		
+		- 구현 객체는 요청 처리 과정 중에 생성 Request 객체 안에 있다. HttpServletRequest::getRequestDispatcher(...)
+		
+	MVC(모델-뷰-컨트롤러) 역할 분담 모델
+		
+		M(Model) - 기능(비즈니스 로직, Service)
+					- DTO(Data Transfer Ovject) 데이터 객체(멤버 변수 + getter, setter ...) / VO(Value Ovject)
+					- Validator : 유효성 검사
+					- DAO(Data Access Object) 데이터 접근 객체
+					- ... 기능을 구현하기 위한 여러 객체
+		
+		V(View) - 출력 템플릿 영역 - JSP
+		
+		C(Controller) - 요청과 응답 중재자 - 서블릿
+		
 	5. 자바빈즈 액션 태그의 기능과 사용법
 		1) 자바빈즈 :  데이터 표현을 목적으로 하는 자바 클래스
+		
 		2) 자바빈즈 작성 규칙
+			- 매개변수가 없는 기본 생성자가 반드시 존재해야 한다.
+			- 데이터 전달용 객체(DTO)를 위해
+			- private 범위의 멤버 변수 + getter, setter
+			
 		3) useBean 액션 태그로 자바빈즈 사용하기
+		
 		4) setProperty 액션 태그로 프로퍼티 값 저장하기
+
 		5) getProperty 액션 태그로 프로퍼티의 값 가져오기
