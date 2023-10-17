@@ -5,7 +5,6 @@
     Member member1 = (Member)pageContext.getAttribute("member");
     Member member2 = (Member)request.getAttribute("member");
     Member member3 = (Member)application.getAttribute("member");
-
 %>
 pageContext : <%=member1%><br>
 request : <%=member2%><br>
