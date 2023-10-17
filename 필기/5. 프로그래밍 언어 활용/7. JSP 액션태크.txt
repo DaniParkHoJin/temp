@@ -52,7 +52,22 @@
 			- private 범위의 멤버 변수 + getter, setter
 			
 		3) useBean 액션 태그로 자바빈즈 사용하기
-		
+			id :
+			class :
+			scope : 생성된 객체 id 변수가 유지될 속성 범위
+					- page : 기본값 : PageContext pageContext
+					- request : HttpServletRequest request
+					- session : HttpSession session
+					- application : ServletContext application
+			
+			page < request < session < application
+			
 		4) setProperty 액션 태그로 프로퍼티 값 저장하기
-
+			name :
+			property :
+			value :
+			param : name 속성이 다른 명칭을 DTO 클래스의 특정 속성 매칭
+			
 		5) getProperty 액션 태그로 프로퍼티의 값 가져오기
+			name :
+			property :

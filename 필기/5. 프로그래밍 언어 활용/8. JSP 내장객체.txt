@@ -1,13 +1,13 @@
 JSP 내장객체
-1. request
-2. response
-3. out
-4. session
-5. application
-6. pageContext
-7. page
-8. config
-9. exception
+1. HttpServletRequest request
+2. HttpServletResponse response
+3. JspWriter out
+4. HttpSession session
+5. ServletContext application
+6. PageContext pageContext
+7. Object page = this
+8. ServletConfig config
+9. Throwable exception / isErrorPage = true
 
 속성 처리 객체와 메서드의 종류
 pageContext, request, session, application

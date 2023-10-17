@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51d5fbe-b3bc-4731-bda0-7099358271c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/members/JoinController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/members/JoinService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/members/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/join.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam05/ex01.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam05/ex02.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam05/ex03.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam05/ex04.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam05/ex05.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/exam04/ex03.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/exam04/ex03.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/exam04/ex06.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/exam04/ex06.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../필기/5. 프로그래밍 언어 활용/7. JSP 액션태크.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../필기/5. 프로그래밍 언어 활용/7. JSP 액션태크.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/exam05/ex01.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/exam05/ex01.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/exam05/ex03.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/exam05/ex03.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

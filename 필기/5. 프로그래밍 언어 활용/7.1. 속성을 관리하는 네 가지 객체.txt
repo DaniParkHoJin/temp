@@ -1,0 +1,25 @@
+속성(Attribute)을 관리하는 네 가지 객체
+
+PageContext pageContext : 현재 페이지 내에서 속성값 유지
+
+HttpServletRequest request : 요청 처리 범위 내에서 속성값 유지
+
+HttpSession session : 세션이 유지되는 동안 속성값 유지
+
+ServletContext application : 애플리케이션이 실행되는 동안 속성값 유지
+
+
+4가지 객체의 공통 기능
+	- 속성 추가
+		void setAttribute(String key, Object value)
+			key : 속성을 찾기 위한 값, EL의 속성(변수)명
+	
+	- 속성 조회
+		Object getAttribute(String key)
+		
+	- 속성 제거
+		void removeAttribute(String key)
+		
+
+유지되는 범위의 크기(적용 범위)
+	pagecontext < Request < session < application
