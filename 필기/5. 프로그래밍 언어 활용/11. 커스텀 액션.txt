@@ -5,18 +5,54 @@
 	2) 태그 클래스를 작성해서 만드는 방법
 
 2. 태그파일을 이용해서 커스텀 액션 만들기
+	- 확장자 .tag
+
 	1) tag 지시자는 태그 파일에만 사용할 수 있는 지시자인데, 웹 컨테이너가 태그 파일을 처리할 때 필요한 여러가지 정보를 기술하는 역할을 합니다.
 	2) tag 지시자는 page 지시자와 마찬가지로 <%@으로 시작해서 %>로 끝나야 합니다. 그리고 <%@ 바로 다음에는 지시자의 종류를 표시하는 tag라는 이름이 와야 합니다.
 	3) 여러가지 정보를 이름="값" 또는 이름='값' 형태로 기술할 수 있습니다. 즉, 애트리뷰트 형태로 기술할 수 있습니다.
 
 3. 태그 파일에서 사용할 수 있는 지시어
 	1) tag 지시자
+	
+		- body-content : empty : 단일 태그 <.../>
+							// 여는 태그, 닫는 태크, 내용물(body-content) <...> ~ </...>
+							
+					   : scriptless
+							- java 코드 사용 불가(스크립트 태그 <% ~ %> X>
+							- EL식 사용 가능
+							- 다른 태크 내부에 사용 가능
+							
+					   : tagdependent
+							- 내용물을 문자열로만 인식
+							<jsp:doBody /> : 태그 안쪽 내용물
+							
+		-trimDirectiveWhitespaces : true -> 불필요한 전후 공백을 제거
+		-pageEncoding : 태그의 인코딩 설정
+	
 	2) include 지시자
 	3) taglib 지시자
+		- tagdir="태그 경로"
+		<%@ taglib prefix="util" tagdir="/WEB-INF/tags" %>
+		- 파일명이 태그명
+		<util:line />
+	
 	4) attribute 지시자
+		- 태그에 속성을 지정할 때
+		- name :속성명
+		- 속성명 : 자바변수, EL식 속성명
+		- type : 자료형, 기본값 java.lang.String (문자역ㄹ)
+				- 기본형 자료형은 사용불가(int, long X), 기본 자료형은 wrapper 클래스 형태로 설정(int -> jave.lang.Integer)
+		- required 필수 항목
+		
+		
 	5) variable 지시자
+		- EL 속성 변수로 사용 가능하게 설정
+		- <c:set var="변수명".../>
+		${변수명}
+	
  
 4. 한글을 포함하는 태그 파일
+	pageEncoding : 태그의 인코딩 설정
 
 
 5. 애트리뷰트(속성)를 지원하는 태그 파일
@@ -24,21 +60,38 @@
 6. 태그 파일의 내장 변수
 
 7. 동적 애트리뷰트를 지원하는 태그 파일
-	- dynamic-attributes
-
+	dynamic-attributes
+	map 형태의 객체로 키-속성명, 값-속성값
+	<%@ tag dynamic-attributes="속성명" %>
+	EL식 속성
+	${속성명.세부속성...}
+	자료형 : 문자열로 고정
+	
 8. 커스텀 액션의 본체를 처리하는 태그 파일
+	body-conntent
+		: scriptless, tagdependent
+		
+		<sjp:doBody /> : 태그 안쪽 내용물
 
 9. 변수를 지원하는 커스텀 액션
-	1) name-given
-	2) variable-class
-	3) scope 
-		- NESTED
-		- AT_BEGIN
-		- AT_END
+	1) name-given : EL식 속성명으로 사용한 변수명
+	2) variable-class : EL식 속성명의 자료형(기본값 - java.lang.String)
+	
+	3) scope : 변수를 사용할 범위
+		내용물이 있는 태그(열린 태그 ~ 닫힌 태그)
+		- NESTED : 태그 안쪽에서 변수 접금
+		- AT_BEGIN : 태그 바로 아래쪽
+		단일 태그에서 많이 사용
+		- AT_END : 닫힌 태그(태그 바깥) 아래쪽에서 접근 가능
 		
 
 10. 커스텀 액션의 본체 안에서 변수를 사용하는 예
-	1)  name-from-attribute
-	2)  alias
+	1)  name-from-attribute : 변수명으로 사용할 속성명(예 - var)
+	
+		변수명 속성에 필수 항목
+		- rtexprvalue : 기본값 true(자바 변수, EL식 변수 가능) -> false로 반드시 설정(문자, 숫자 그대로 입력만 허용)
+		
+	2)  alias : 실제 값이 있는 EL식 변수명
+		
 
 11. 커스텀 액션 태그를 이용하여 레이아웃 구성하기
