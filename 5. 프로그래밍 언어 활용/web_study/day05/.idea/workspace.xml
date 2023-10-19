@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51d5fbe-b3bc-4731-bda0-7099358271c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/forEach2.tag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/layouts/common.tag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/layouts/main.tag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam09/ex05.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam10/ex01.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam10/ex02.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam10/ex03.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam10/ex04.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam10/ex05.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam10/ex06.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/exam11/ex01.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../필기/5. 프로그래밍 언어 활용/11. 커스텀 액션.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../필기/5. 프로그래밍 언어 활용/11. 커스텀 액션.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../필기/5. 프로그래밍 언어 활용/12. 쿠키, 세션.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../필기/5. 프로그래밍 언어 활용/12. 쿠키, 세션.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
