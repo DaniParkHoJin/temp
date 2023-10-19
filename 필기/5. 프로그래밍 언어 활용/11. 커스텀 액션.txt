@@ -95,3 +95,10 @@
 		
 
 11. 커스텀 액션 태그를 이용하여 레이아웃 구성하기
+
+	@attribute
+		fragment : 부분 화면
+		
+		<jsp:invoke fragment="부분화면 이름" />
+			invoke에서 불러올 내용물
+		<jsp:attribute>
