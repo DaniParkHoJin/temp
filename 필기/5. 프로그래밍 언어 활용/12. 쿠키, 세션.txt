@@ -92,6 +92,13 @@ CTRL + SHIFT + N : 시크릿 모드
 
 회원가입, 로그인 구현하기 
 
+TDD : 설계 -> 테스트 -> 지속적인 리팩토링 -> 테스트 -> ...
+
+
+
+
+
+
 의존성 
 - servlet-api
 - servlet.jsp-api
