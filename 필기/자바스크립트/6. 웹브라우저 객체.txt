@@ -23,8 +23,10 @@ XmlHttpRequest 생성자
 	- 동적인 부분 클릭하면 변경되는 부분
 	
 	2) 웹 브라우저에서 자바스크립트 실행 순서
-	- 
+	 
 	3) async와 defer 속성
+	- defer : DOMContentLoaded 이벤트 이후에 스트립트 실행(외부 스트립트 파일(js))
+	- async :
 
 2. CSS와 렌더링
 3. 웹 브라우저 렌더링 엔진과 자바스크립트 엔진
@@ -32,34 +34,60 @@ XmlHttpRequest 생성자
 
 Window 객체
 	1. Window 객체의 주요 프로퍼티
-2. Window 객체의 주요 메서드
+		window
+		self
+		parent : 자식창이 없는 경우는 현재 창의 window와 동일
+		top : 가상 상위 창의 window 객체, 자식창 X -> 현재창의 window와 동일
+		
+		창의 너비, 높이(스크롤바를 제외한 보이는 부분)
+			innerWidth
+			innerHeight
+			
+		창의 너비, 높이(스크롤바를 포함 한 크기)
+			outerWidth
+			outerHeight
+			
+		pageXOffset : X축에서 스크롤한 만큼
+		pageYOffset : Y축에서 스크롤한 만큼
+		
+		document 객체.getBoundingClientRect()
+		
+	2. Window 객체의 주요 메서드
+		console
+			.log(..."값")
+			.error(값) 글씨 색상이 붉은 색상
+			.trace()
 
-Location 객체
-1. Location 객체의 프로퍼티
-2. Location 객체의 메서드
+Location 객체 : 주소창과 관련된 객체
+	1. Location 객체의 프로퍼티
+		주소창에 있는 정보
+		
+	2. Location 객체의 메서드
+		주소창의 기능 통제
 
-History 객체
-1. History 객체의 프로퍼티
-2. History 객체의 메서드
+History 객체 : 방문 기록과 관련된 객체
+	1. History 객체의 프로퍼티
+	2. History 객체의 메서드
 
-Naviator 객체
-1. Navigator 객체의 주요 프로퍼티
-2. Navigator 객체의 메서드
+Naviator 객체 : 언어, 인터넷 연결상태 등
+	1. Navigator 객체의 주요 프로퍼티
+	2. Navigator 객체의 메서드
 
 Screen 객체
-1. Screen 객체의 주요 프로퍼티
+	1. Screen 객체의 주요 프로퍼티
 
 창 제어하기
-1. 창 여닫기
-open
+	1. 창 여닫기
+	open : 팝업창, 열린 창의 window 객체 반환
 
 2. open 메서드로 설정할 수 있는 옵션의 이름
-width, height, location, scrollbars, toolbar, status, menubar
+	width, height, location, scrollbars, toolbar, status, menubar
 
 3. 창 제어하기
-1) moveBy(..), moveTo(...)
-2) resizeBy(..), resizeTo(...)
-3) scrollBy(..), scrollTo(...)
+	1) moveBy(..), moveTo(...) : 창 이동
+	2) resizeBy(..), resizeTo(...) : 창 크기
+	3) scrollBy(..), scrollTo(...) : 
+	4) close() : 창 닫기
 
 4. 다른 창 참조하기
 
