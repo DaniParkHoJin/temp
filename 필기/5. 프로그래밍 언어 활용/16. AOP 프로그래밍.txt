@@ -6,19 +6,71 @@ aspectjweaver
 
 관점 : 핵심 기능
 
-1. 프록시(proxy)
+1. 프록시(proxy) 방화벽
 	- 대신하다
 	
 	!5 = 5 * 4 * 3 * 2 * 1 
 	
+	예)
+	class BufferedInputStream extends InputStream {
+		private InputStream in;
+	
+		public BufferedInputStream(InputStream in){
+			this.in = in;
+		}
+		
+		public int read(){
+		
+			// 버퍼 공통 기능...
+			
+			int ch = in.read(); // 핵심 기능
+			
+			// 버퍼 공동 기능...
+			
+			reture ch;
+		}
+	}
+	
 2. AOP
-	1) @Aspect 
+- spring-aop API
+- aspectjweaver
+
+
+	1) @Aspect : 프록시로 정의하는 클래스 명
+	
 	2) @Pointcut 
 		- execution 명시자
+		- 프록시가 적용될 범위
 	
 	3) @Around
-
+		-핵심 기능과 공통 기능을 수행할 메서드
+	ProceedingJoinPoint : 대신 수행하는 메서드의 정보, 실행
+		Object proceed() : 핵심 기능을 수행 -> factorial()
+		
+		Object[] getArgs() : 매개변수에 대입된 값
+		Object getTarget() : 매서드가 소속된 객체
+		Signature getSignature() : 함수(메서드)의 정보
+			- String getName() : 메서드 명
+			- String toLongString() : 반환값 타임 + 메서드명 + 메개변수 정보
+			- String toShortString() :
+			
+			
+	Ant 패턴
+	경로 패턴
+		aopex.* : aopex 패키지의 모든 하위 클래스
+		aopex..* : aopex 패키지와 하위 패키지를 포함한 모든 클래스
+	
+	메서드 패턴
+		(..) : 0개 이상의 매개변수 - 매개변수가 없어도 되고 있어도 되는 패턴
+		(*) : 1개의 매개변수를 가지고 있는 메서드
+		(*,*) : 2개의 매개변수를 가지고 있는 메서드
+	
+	
+	@EnableAspectJAutoProxy
+		- AspectJ 설정 자동화
+	
 3. @Order
+	- 프록시의 실행 순서가 중요한 경우는 순서를 명시
 
 4. 프록시 생성방식
 5. @Around의 Pointcut 설정과 @Pointcut 재사용

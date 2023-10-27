@@ -61,14 +61,29 @@ Window 객체
 Location 객체 : 주소창과 관련된 객체
 	1. Location 객체의 프로퍼티
 		주소창에 있는 정보
+		- search : 쿼리 스트링 문자열
+			:URLSearchParams 생성자
+				: append(..) : 쿼리스트림 추가
+				: get(..) : 조회
+				: delete(..) : 삭제
 		
 	2. Location 객체의 메서드
 		주소창의 기능 통제
+		- assign(주소); : 방문 기록이 되는 주소 이동, location.href="주소"
+		- replace(주소); : 방문 기록이 되지 않는 주소 이동
 
+		- reload(); : 페이지 새로고침
 History 객체 : 방문 기록과 관련된 객체
 	1. History 객체의 프로퍼티
+		length : 방문 기록 갯수
+		scrollRestoration : auto(기본값) | manual
+			auto : 스크롤바 자동 복구
 	2. History 객체의 메서드
-
+		back() : 이전 페이지로 한단계 이동
+		forwrad() : 다음 페이지로 한 단계 이동
+		go(숫자) : 양수-숫자 만큼 다음 페이지로 이동, 음수-숫자 만큼 이전 페이지로 이동
+		
+		
 Naviator 객체 : 언어, 인터넷 연결상태 등
 	1. Navigator 객체의 주요 프로퍼티
 	2. Navigator 객체의 메서드
