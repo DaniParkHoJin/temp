@@ -1,0 +1,63 @@
+스프링 MVC 
+1. 메시지
+1) MessageSource
+2) ResourceBundleMessageSource
+3) 다국어 지원 위한 메시지 파일
+
+2. 커맨드 객체 검증
+1) Validator
+2) Errors
+3) ValidationUtils
+
+
+3. 에러 코드에 해당하는 메시지 코드를 찾는 규칙
+- 에러코드 + "." + 커맨드객체이름 + "." + 필드명
+- 에러코드 + "." + 필드명
+- 에러코드 + "." + 필드타입
+- 에러코드
+
+4. 프로퍼티 타입이 List나 목록인 경우 다음 순서를 사용해서 메시지 코드를 생성한다.
+
+에러코드 + "." + 커맨드객체이름 + "." + 필드명[인덱스].중첩필드명
+에러코드 + "." + 커맨드객체이름 + "." + 필드명.중첩필드명
+에러코드 + "." + 필드명[인덱스].중첩필드명
+에러코드 + "." + 필드명.중첩필드명
+에러코드 + "." + 중첩필드명
+에러코드 + "." + 필드타입
+에러코드
+
+5. 글로벌 범위 Validator와 컨트롤러 범위 Validator
+1) 글로벌 범위 Validator 설정과 @Valid 애노테이션
+-  WebMvcConfigurer의 getValidalor() 
+2) @InitBinder 애노테이션을 이용한 컨트롤러 범위 Validator
+@InitBinder
+protected void InitBinder(WebDataBinder binder) {
+	binder.setValidator(new RegisterRequestValidator());
+}
+	
+3) 컨트롤러 범위 Validator  > 글로벌 범위 Validator
+
+6. Bean Validation
+1) 설정
+2) Bean Validation의 주요 애노테이션 
+@AssertTrue
+@AssertFalse
+@DecimalMax
+@DecimalMin
+@Max
+@Min
+@Digits
+@Size
+@Null
+@NonNull
+@Pattern
+
+@NotEmpty
+@NotBlank
+@Positive
+@PositiveOrZero
+@Email
+@Future
+@FutureOrPresent
+@Past
+@PastOrPresent

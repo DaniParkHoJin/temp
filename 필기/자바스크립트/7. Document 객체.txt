@@ -57,25 +57,60 @@ Document 객체 : HTML 문서와 관련된 객체
 	document.querySelectorAll("CSS 선택자") : 매칭되는 모든 요소를 반환
 
 6. 속성 값의 읽기와 쓰기
+	(attributes - 속성)
 	1) 속성 값 가져오기
+		- getAttribute("이름")
+		
 	2) 속성 값 설정하기
+		- setAttribute("이름", "값")
+		- 기본 속성에 값을 변경하면 - 기본 태그의 기능에 영향을 주기도 한다.
+		- 정보성 위주의 속성 -> data-속성명="값" - 권장사항
+		- document 객체에 dataset 속성 : data-속성명을 속성명 형태로 조회, 추가, 삭제
+		
+		- 클래스 속성(className)
+			- document 객체 classList 속성(객체)
+			- 클래스의 정보
+			- 클래스의 추가, 수정, 삭제
+				- add(...)
+				- replace(...)
+				- remove(...)
+				- toggle(...)
+				- contains(...)
+		
 	3) 속성이 있는지 확인하기
+		- hasAttribute("이름")
+		
 	4) 속성 삭제하기
-
+		- removeAttribute("이름")
+		
+	사용 빈도가 높고, 기능과 관련된 속성 ->  document 객체의 하위 속성으로 바로 접근 가능	
+	(type, href, src, value, name, target, action...
+		id, className(class 속성) )
+	
 	5) 전체 속성의 목록 가져오기
-	- attributes
+		- attributes
 
 7. HTML 요소의 내용을 읽고 쓰기
 	1) innerHTML 프로퍼티
-2) textContent와 innerText 프로퍼티
-
+		- 요소 내부의 HTML 텍스트 조회
+		- HTML 태그 내용물을 변경		
+		
+	2) textContent와 innerText 프로퍼티
+		- 요소 내부의 텍스트 조회
+		- 요소 내부의 텍스트 변경		
+		
 노드 생성/삽입/삭제하기
 1. 노드 생성하기
 	1) 노드 객체를 생성하는 주요 메서드
+	createElement("태그명") -> 태그 형태의 document 객체 생성 ( 메모리에만 생성된 상태)
+	createTextNode("텍스트") -> 텍스트 형태의 document 객체 생성
 
 2. 노드 삽입하기
-	1) appendChild(..)
+	1) 부모.appendChild(자식)
+		- 자식 요소를 부모 요소 안의 자식 요소 끝에 추가
 	2) insertBefore(..)
+		- 요소의 중간에 추가할 때 사용
+		- 부모.insertBefore(추가 자식, 기준 자식)		
 
 3. 노드 옮기기
 4. 노드 삭제하기

@@ -1,0 +1,17 @@
+1) 변수 식
+	${...}
+ 
+2) 메시지 식
+	#{코드}
+	
+3) URL 식
+	@{...}
+	
+4) 선택 변수 식
+	*{...} -> th:Object 와 함께 사용된다.
+	
+	<section th:object="${member}">
+		<dl>
+			<dt>회원번호</dt>
+			<dd th:text="*{userNo}"></dd>
+		</dl>

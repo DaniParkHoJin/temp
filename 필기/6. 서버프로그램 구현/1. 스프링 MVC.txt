@@ -15,6 +15,7 @@ spring-webmvc
 		2) View : 출력 템플릿 경로 정보 
 
 3. WebMvcConfigurer 인터페이스와 설정
+	- 웹 MVC 설정에 대한 항목이 정의되어 있는 인터페이스
 
 4. 정리
 	1) DispatcherServlet 	
@@ -51,3 +52,27 @@ spring-webmvc
 		HttpServletRequest 
 			String getParameter(String name)
 			String[] getParameterValues(String name);
+			
+		커맨드 객체(전달용 객체)
+		 (DTO -> getter, setter)
+		Spring6 -> Record 클래스도 적용 가능
+		
+		서블릿 기본 객체 -> 편의 상 스프링 컨테이너 관리 객체로 설정
+		HttpServletRequest
+		HttpServletResponse
+		HttpSession
+		
+		Model -> 요청 메서드에 자동 주입
+			-> 데이터 관리 객체(EL식 속성)
+			- addAttribute(String name, Objetct value)
+			
+	
+Ant 경로 패턴
+/member/* -> member 경로 하위 파일
+	예) /member/join.jsp
+/member/** -> member 경로를 포함한 하위 경로 포함 모든 파일
+	예) /member/mypage/index.jsp
+	
+? -> 문자 한 개
+/m?01
+	->m101, m201
