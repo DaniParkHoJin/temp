@@ -1,5 +1,6 @@
 package config;
 
+import commons.Utils;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -18,6 +19,13 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 public class MvcConfig implements WebMvcConfigurer {
     @Autowired
     private ApplicationContext ctx;
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/")
+                .setViewName("main/index");
+    }
+
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
@@ -69,6 +77,9 @@ registry.addResourceHandler("/**")
         ms.setDefaultEncoding("UTF-8");
 
         return ms;
-
+    }
+    @Bean
+    public Utils utils(){
+        return new Utils();
     }
 }

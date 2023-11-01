@@ -38,8 +38,11 @@ th:block 태그 -> 번역되면 삭제
 2. 타임리프 식 객체
 	1) #strings
 	2) #numbers
-	3) #dates, #calendars, #temporals
+	3) #dates, #calendars, #temporals : (java 8, java.time 패키지)
 	4) #lists, #sets, #maps
+		-> 내장 식객체에 없는 기능? 스프링 빈으로 생성
+		
+	${@빈이름.메서드명(...)}
 
 
 3. th:text
@@ -50,10 +53,32 @@ th:block 태그 -> 번역되면 삭제
 	-[[${...}]] : 태그 안쪽에서도 출력/문자열만 인식, HTML 태그는 해석 X
 	
 4. th:each
+	- 반복문
+	
+	- status
+		- index: 0부터 시작하는 순서 번호
+		- count: 1부터 시작하는 순서 번호
+		- first : 천번째 행 여부
+		- last : 마지막행 여부
+		- even : 짝수 행 여부
+		- odd : 홍수 행 여부
 
-5. th:if, th:unless 
-6. th:href
-7. th:object 
+
+5. th:if, th:unless
+	th:if : 조건식
+	th:if="${}..."
+	
+	th:unless="${...}" : 조건식이 false면 노출, true면 노출 X
+	
+	true, false -> 상수로 바로 인식
+	
+
+6. th:switch, th:case
+	
+7. th:href
+	th:src
+	th:action
+8. th:object 
 
 스프링 MVC 폼과 에러 메시지 연동
 1. #fields.errors(..)
@@ -61,3 +86,6 @@ th:block 태그 -> 번역되면 삭제
 
 
 타임리프 페이지 레이아웃
+
+th:replace : 템플릿 파일 치환
+th:fragment

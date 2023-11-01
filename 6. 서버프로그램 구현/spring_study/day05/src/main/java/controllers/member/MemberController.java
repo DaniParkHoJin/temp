@@ -1,28 +1,46 @@
 package controllers.member;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import models.member.Member;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/member")
 public class MemberController {
-    /*
-    @Autowired
-    private HttpServletRequest request;
-    @GetMapping("/member/login")
-    public String login(RequestLogin form, HttpServletRequest request, HttpServletResponse response){
-        System.out.println(form);
-        System.out.println(response);
-        System.out.println(request.getParameter("userId"));
-
-        return "member/login";
-
+    @GetMapping("/join")// /member.join
+    public String join() {
+        return "member/join";
     }
-    */
+    @PostMapping("/join")
+    public String joinPs(){
+        System.out.println("유입?");
+        return "redirect:/member/login";
+    }
+    @GetMapping("/login") // member.login
+    public String login() {
+        return "member/login";
+    }
+    @PostMapping("/login")
+    public String loginPs(){
+        return "member/login";
+    }
+
+
+
+    /*
+    @GetMapping("/member/join")
+    public String join(Model model){
+        String[] addCss = {"member/test1", "member/test2"};
+        List<String> addScript = Arrays.asList("member/script1", "member/script2");
+
+        model.addAttribute("addCss",addCss);
+        model.addAttribute("addScript", addScript);
+        model.addAttribute("pageTitle", "회원가입");
+
+        return "member/join";
+    }
+
     @GetMapping("/member/login")
     public String login(Model model) {
         model.addAttribute("userId", "user99");
@@ -46,4 +64,25 @@ public class MemberController {
 
         return "member/info";
     }
+
+    @GetMapping("/member/list")
+    public String members(Model model) {
+
+        List<Member> members = IntStream.rangeClosed(1, 10).mapToObj(this::addMember).toList();
+        model.addAttribute("members", members);
+
+        return "member/list";
+    }
+
+    private Member addMember(int i) {
+        return Member.builder()
+                .userNo(i*10000)
+                .userId("user" + i)
+                .userPw("123456")
+                .userNm("사용자" + i)
+                .email("user"+i+"@test.org")
+                .regDt(LocalDateTime.now())
+                .build();
+
+    }*/
 }
