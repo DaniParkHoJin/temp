@@ -1,20 +1,35 @@
 package controllers.member;
 
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/member")
+@RequiredArgsConstructor
 public class MemberController {
+
+    private final JoinValidator joinValidator;
+
     @GetMapping("/join")// /member.join
-    public String join() {
+    public String join(@ModelAttribute RequestJoin join) {
+
         return "member/join";
     }
     @PostMapping("/join")
-    public String joinPs(){
-        System.out.println("유입?");
+    public String joinPs(@Valid RequestJoin join, Errors errors){
+        joinValidator.validate(join, errors);
+
+        if(errors.hasErrors()){
+            // 검증 실패시 유입
+            return "member/join";
+        }
+        // 검증 성공 -> 회원가입 처리
         return "redirect:/member/login";
     }
     @GetMapping("/login") // member.login
