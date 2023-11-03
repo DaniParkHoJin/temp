@@ -1,4 +1,4 @@
-스프링 MVC 
+스프링 MVC(1)
 1. 메시지
 	1) MessageSource
 	2) ResourceBundleMessageSource
@@ -84,3 +84,23 @@
 		@FutureOrPresent
 		@Past
 		@PastOrPresent
+		
+		
+	참고)
+	
+	MOdelMapper 의존성
+	- 동일한 getter, setter 메서드 명 -> 다른 객체 전환
+	
+	중첩 커맨드 객체 / 커맨드 객체 안에 커맨드 객체
+	
+	#fields.globalErrors() ->errors.reject(...)
+	#fields.errors('global')
+	
+	요청 메서드의 매개변수로 자동 주입
+	1. 커맨드 객체
+	2. Errors
+	3. Model
+	4. HttpServletRequest
+	5. HttpServletResponse
+	6. HttpSession
+	

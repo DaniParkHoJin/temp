@@ -25,4 +25,7 @@ public class RequestJoin {
     private String mobile;
     @AssertTrue
     private boolean agree;
+
+    private Address addr;
+
 }

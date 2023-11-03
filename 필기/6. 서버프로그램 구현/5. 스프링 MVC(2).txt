@@ -1,0 +1,17 @@
+스프링 MVC(2)
+1. 세션
+
+2.인터셉터
+	1) HandlerInterceptor 인터페이스 
+		- boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception;
+		- void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception;
+		- void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception;
+	2) WebMvcConfigurer 인터페이스 : addInterceptors(InterceptorRegistry registry)
+	3) Ant 경로 패턴
+		- * : 0개 또는 그 이상의 글자
+		- ** 0개 또는 그 이상의 폴더 경로
+		- ? : 1개 글자
+
+3.쿠키
+
+	@CookieValue 쿠키명과 동일한 변수명

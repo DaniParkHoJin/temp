@@ -1,12 +1,16 @@
 package controllers.member;
 
 import commons.MobileValidator;
+import models.member.MemberDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component
 public class JoinValidator implements Validator, MobileValidator {
+    @Autowired
+    private MemberDao memberDao;
     @Override
     public boolean supports(Class<?> clazz) {
         return clazz.isAssignableFrom(RequestJoin.class);
@@ -28,6 +32,14 @@ public class JoinValidator implements Validator, MobileValidator {
         String userPw = form.getUserPw();
         String confirmUserPw = form.getConfirmUserPw();
         String mobile = form.getMobile();
+
+        // 아이디 중복 여부 - 중복 가입 X
+        if (userId != null && !userId.isBlank() && memberDao.exists(userId)) {
+           errors.rejectValue("userId","Duplicate");
+        }
+
+
+
 
         //  비밀번호, 비밀번호 확인 일치여부 Start
         if (userPw != null && !userPw.isBlank() && confirmUserPw != null && !confirmUserPw.isBlank()

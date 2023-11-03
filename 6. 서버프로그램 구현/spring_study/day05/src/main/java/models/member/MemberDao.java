@@ -2,17 +2,11 @@ package models.member;
 
 import lombok.RequiredArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.swing.plaf.basic.BasicTreeUI;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,25 +14,14 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-//@Transactional
 public class MemberDao {
 
     private final JdbcTemplate jdbcTemplate;
-    //@Transactional
+
     public boolean register(Member member) {
-/*
         String userPw = BCrypt.hashpw(member.getUserPw(), BCrypt.gensalt(12));
-        member.setUserPw(userPw);
-
-        String sql = "INSERT INTO MEMBER (USER01, USER_ID, USER_PW, EMAIL, USER_NM, MOBILE " + " VALUES(SEQ_MEMBER.next.val,?,?,?,?,?)";
-
-
-        int affectedRows = jdbcTemplate.update(sql, member.getUserId(),
-                userPw, member.getEmail(),member.getUserNm(), member.getMobile());
-        return affectedRows > 0;
-        */
-        String userPw = BCrypt.hashpw(member.getUserPw(), BCrypt.gensalt(12));
-        String sql = "INSERT INTO MEMBER (USER01, USER_ID, USER_PW, EMAIL, USER_NM, MOBILE " + " VALUES(SEQ_MEMBER.next.val,?,?,?,?,?)";
+        String sql = "INSERT INTO MEMBER (USER_NO, USER_ID, USER_PW, EMAIL, USER_NM, MOBILE) " +
+                " VALUES (SEQ_MEMBER.nextval, ?, ?, ?, ?, ?)";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -61,6 +44,7 @@ public class MemberDao {
         return affectedRows > 0;
     }
 
+
     public Member get(String userId) {
         try {
             String sql = "SELECT * FROM MEMBER WHERE USER_ID = ?";
@@ -82,13 +66,15 @@ public class MemberDao {
 
     public List<Member> gets() {
         String sql = "SELECT * FROM MEMBER ORDER BY REG_DT DESC";
+
         List<Member> members = jdbcTemplate.query(sql, this::mapper);
 
         return members;
     }
 
     private Member mapper(ResultSet rs, int i) throws SQLException {
-        return Member.builder().userNo(rs.getLong("USER_NO"))
+        return Member.builder()
+                .userNo(rs.getLong("USER_NO"))
                 .userId(rs.getString("USER_ID"))
                 .userPw(rs.getString("USER_PW"))
                 .userNm(rs.getString("USER_NM"))

@@ -23,6 +23,7 @@
 		- 컴포넌트 객체의 정적 속성 설정
 		- prop-types
 		- 자료형, 필수 여부(isRequired)
+		
 3. 클래스형 컴포넌트에서 props 사용하기
 	- 클래스형 컴포넌트에서 props를 사용할 때는 render 함수에서 this.props를 조회하면 됩니다.
 	- defaultProps와 propTypes는 똑같은 방식으로 설정할 수 있습니다.
