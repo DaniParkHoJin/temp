@@ -9,10 +9,10 @@
 	기본 양식 content-type 
 		application/x-www-form-urlencoded
 2. web.xml 설정 
-<multipart-config>
-	<max-file-size>20971520</max-file-size> <!--  1MB * 20 -->
-    <max-request-size>41943040</max-request-size> <!-- 40MB -->
-</multipart-config>
+	<multipart-config>
+		<max-file-size>20971520</max-file-size> <!--  1MB * 20 -->
+		<max-request-size>41943040</max-request-size> <!-- 40MB -->
+	</multipart-config>
 
 3. MultipartFile 인터페이스
 
@@ -23,19 +23,24 @@
 1. @Profile
 
 2. spring.profiles.active
-1) web.xml 
-2) 배포 파일 실행시 
-java -jar -Dspring.profiles.active=프로필이름 
+	1) web.xml 
+	2) 배포 파일 실행시 
+	java -jar -Dspring.profiles.active=프로필이름 
 
 프로퍼티 파일을 이용한 프로퍼티 설정
 
 1. @Configuration
-public static PropertySourcesPlaceholderConfigurer properties() {
-		PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
-		configurer.setLocations(
-				new ClassPathResource("db.properties"),
-				new ClassPathResource("info.properties"));
-		return configurer;
-}
+	public static PropertySourcesPlaceholderConfigurer properties() {
+			PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
+			configurer.setLocations(
+					new ClassPathResource("db.properties"),
+					new ClassPathResource("info.properties"));
+			return configurer;
+	}
 
 2. @Value("${프로퍼티 키값}")
+
+
+java.nio.File
+
+new Input and Output

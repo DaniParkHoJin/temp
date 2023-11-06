@@ -17,12 +17,12 @@ public class LoginService {
     private final HttpServletResponse response;
 
     public void login(RequestLogin form){
-        String userId = form.userId();
+        String userId = form.getUserId();
         Member member = memberDao.get(userId);
 
         session.setAttribute("member", member);
 
-        boolean saveId = Objects.requireNonNullElse(form.saveId(),false);
+        boolean saveId = Objects.requireNonNullElse(form.isSaveId(),false);
 
         Cookie cookie = new Cookie("saveId", userId);
         if (saveId){ // 쿠키 저장

@@ -19,7 +19,7 @@ public class MemberController {
     private final LoginValidator loginValidator;
     private final LoginService loginService;
 
-    @GetMapping("/join")// /member.join
+    @GetMapping("/join") // /member/join
     public String join(@ModelAttribute RequestJoin join) {
 
         return "member/join";
@@ -27,21 +27,28 @@ public class MemberController {
 
     @PostMapping("/join")
     public String joinPs(@Valid RequestJoin join, Errors errors) {
-        System.out.println("데이터 확인 : " + join);
 
-        joinValidator.validate(join, errors);
+        //joinValidator.validate(join, errors);
+/*
 
         if (errors.hasErrors()) {
             // 검증 실패시 유입
             return "member/join";
         }
+*/
+
         // 검증 성공 -> 회원가입 처리
         joinService.join(join);
+
         return "redirect:/member/login";
     }
 
-    @GetMapping("/login") // member.login
-    public String login(@ModelAttribute RequestLogin form, @CookieValue (name="saveId", required = false)String saveId) {
+    @GetMapping("/login")  // /member/login
+    public String login(@ModelAttribute RequestLogin form, @CookieValue(name="saveId", required = false) String userId) {
+        if (userId != null) {
+            form.setUserId(userId);
+            form.setSaveId(true);
+        }
 
         return "member/login";
     }
@@ -49,47 +56,60 @@ public class MemberController {
     @PostMapping("/login")
     public String loginPs(@Valid RequestLogin form, Errors errors) {
         loginValidator.validate(form, errors);
+
         if (errors.hasErrors()) {
             return "member/login";
         }
+
         // 유효성 검사 성공 -> 로그인 처리
-        loginSevice.login(form);
+        loginService.login(form);
+
         return "redirect:/";
+
     }
+
     @RequestMapping("/logout")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session) {
         session.invalidate();
 
         return "redirect:/member/login";
     }
 
-
+    // MemberController 한정 예외 페이지 처리
+    /*
+    @ExceptionHandler(Exception.class)
+    public String errorHandler(Exception e, Model model){
+        e.printStackTrace();
+        model.addAttribute("message",e.getMessage());
+        return "error/common";
+    }
+    */
     /*
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.setValidator(joinValidator);
-
     }
     */
-
-
     /*
     @GetMapping("/member/join")
-    public String join(Model model){
+    public String join(Model model) {
         String[] addCss = {"member/test1", "member/test2"};
         List<String> addScript = Arrays.asList("member/script1", "member/script2");
 
-        model.addAttribute("addCss",addCss);
+        model.addAttribute("addCss", addCss);
         model.addAttribute("addScript", addScript);
         model.addAttribute("pageTitle", "회원가입");
 
         return "member/join";
     }
 
+
     @GetMapping("/member/login")
     public String login(Model model) {
+
         model.addAttribute("userId", "user99");
         model.addAttribute("userPw", "비밀번호");
+
         return "member/login"; // login.html
     }
 
@@ -102,7 +122,7 @@ public class MemberController {
                 .userPw("123456")
                 .userNm("사용자01")
                 .email("user01@test.org")
-                .mobile("01000000000")
+                .mobile("010-0000-0000")
                 .build();
 
         model.addAttribute("member", member);
@@ -121,7 +141,7 @@ public class MemberController {
 
     private Member addMember(int i) {
         return Member.builder()
-                .userNo(i*10000)
+                .userNo(i * 10000)
                 .userId("user" + i)
                 .userPw("123456")
                 .userNm("사용자" + i)
@@ -129,5 +149,6 @@ public class MemberController {
                 .regDt(LocalDateTime.now())
                 .build();
 
-    }*/
+    }
+     */
 }
