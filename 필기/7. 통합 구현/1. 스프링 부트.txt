@@ -1,4 +1,4 @@
-스프링 부트 
+스프링 부트 spring data api docs
 1. 소개 
 starter 
 	- 셋팅, 빌드 자동화 
@@ -7,33 +7,45 @@ starter
 	
 2. 설정 
 
-gradle clean build
-gradle clean bootJar
-gradle bootRun : jar 파일 자동 실행
+	gradle clean build
+	gradle clean bootJar
+	gradle bootRun : jar 파일 자동 실행
 
-java -jar -Dspring.profiles.active=prod  ...jar
--spring.profiles.active 환경 변수에 따라 설정 파일이 분리
+	java -jar -Dspring.profiles.active=prod  ...jar
+	-spring.profiles.active 환경 변수에 따라 설정 파일이 분리
 
-appplication/properties
+	appplication/properties
 
--dspring.profiles.active=prod
+	-dspring.profiles.active=prod
 
-application-prod.properties
+	application-prod.properties
 
-spring.datasource ...
+	spring.datasource ...
 
-Datasource. jdbcTemplate 빈
-+spring Data JDBC
--CrudRepository 인터페이스
+	Datasource. jdbcTemplate 빈
+	+spring Data JDBC
+	-CrudRepository 인터페이스 -> DAO 클래스를 대신
+	-@Query
 
 
 
 
 3. @Scheduled
-1) fixedDelay
-2) fixedRate
-3) initialDelay
-4) cron
-5) @EnableScheduling 
+	1) fixedDelay
+	2) fixedRate
+	3) initialDelay
+	4) cron
+	5) @EnableScheduling
 
 4. Spring Data jdbc
+
+
+쿼리메서드
+
+Sort
+
+pageable
+
+YML
+
+YAML
