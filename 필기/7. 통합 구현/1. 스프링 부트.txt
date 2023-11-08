@@ -20,6 +20,14 @@ appplication/properties
 
 application-prod.properties
 
+spring.datasource ...
+
+Datasource. jdbcTemplate 빈
++spring Data JDBC
+-CrudRepository 인터페이스
+
+
+
 
 3. @Scheduled
 1) fixedDelay

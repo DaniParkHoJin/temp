@@ -1,0 +1,120 @@
+Document 객체 : HTML 문서와 관련된 객체
+	- Document 객체는 창에 표시되고 있는 웹 페이지를 관리합니다.
+	- 이 객체로 웹 페이지의 내용물인 DOM 트리를 읽거나 쓸 수 있습니다.
+	- Document 객체는 클라이언트 측 자바스크립트에서 가장 중요한 객체입니다.
+
+1. Document 객체의 주요 프로퍼티
+
+2. Document 객체 주요 메서드
+
+
+문서 제어
+1. DOM 트리
+2. 노드 객체의 프로퍼티
+	- 요소와 요소 사이에 있는 공백 문자의 영향을 받습니다.
+	1) parentNode
+	2) childNodes
+	3) firstChild
+	4) lastChild
+	5) nextSibling
+	6) previousSibling
+	7) nodeType
+	8) nodeValue
+	9) nodeName
+
+3. HTML 요소의 트리
+	- 공백을 무시하고 요소만 체크
+
+	1) children : 지식 요소들
+	2) parentElement : 부모 요소
+	3) firstElementChild : 첫 번째 자식 요소
+	4) lastElementChild : 마지막 자식 요소
+	6) nextElementSibling : 다음(오른쪽) 형제 요소
+	7) previousElementSibling : 이전(왼쪽) 형제 요소
+	8) childElementCount : 자식 요소의 갯수
+
+4. 자바스크립트로 웹 페이지 제어하기
+- 렌더링 엔진은 DOM 트리와 스타일 규칙이 바뀔 때마다 렌더 트리를 다시 구성해서 웹페이지를 다시 그립니다.
+
+5. 노드 객체 가져오기
+	1) id 속성으로 노드 가져오기(단수개)
+		document.getElmentById("아이디명")
+		
+	2) 요소 이름으로 노드 가져오기(복수개)
+		document.getElmentsByTagName("태그명")
+		for of 구문을 사용하면 편하다
+		
+	3) class 속성 값으로 노드 가져오기(복수개)
+		document.getElmentsByClassName("클래스명")
+		
+	4) name 속성 값으로 노드 가져오기
+		document.getElementsByName("Name 속성명)
+		
+		- form 요소의 하위 속성으로도 접근 가능
+				
+	5) CSS 선택자로 노드 가져오기
+	document.querySelector("CSS 선택자") : 가장 먼저 매칭된 1개 요소 반환
+	document.querySelectorAll("CSS 선택자") : 매칭되는 모든 요소를 반환
+
+6. 속성 값의 읽기와 쓰기
+	(attributes - 속성)
+	1) 속성 값 가져오기
+		- getAttribute("이름")
+		
+	2) 속성 값 설정하기
+		- setAttribute("이름", "값")
+		- 기본 속성에 값을 변경하면 - 기본 태그의 기능에 영향을 주기도 한다.
+		- 정보성 위주의 속성 -> data-속성명="값" - 권장사항
+		- document 객체에 dataset 속성 : data-속성명을 속성명 형태로 조회, 추가, 삭제
+		
+		- 클래스 속성(className)
+			- document 객체 classList 속성(객체)
+			- 클래스의 정보
+			- 클래스의 추가, 수정, 삭제
+				- add(...)
+				- replace(...)
+				- remove(...)
+				- toggle(...)
+				- contains(...)
+		
+	3) 속성이 있는지 확인하기
+		- hasAttribute("이름")
+		
+	4) 속성 삭제하기
+		- removeAttribute("이름")
+		
+	사용 빈도가 높고, 기능과 관련된 속성 ->  document 객체의 하위 속성으로 바로 접근 가능	
+	(type, href, src, value, name, target, action...
+		id, className(class 속성) )
+	
+	5) 전체 속성의 목록 가져오기
+		- attributes
+
+7. HTML 요소의 내용을 읽고 쓰기
+	1) innerHTML 프로퍼티
+		- 요소 내부의 HTML 텍스트 조회
+		- HTML 태그 내용물을 변경		
+		
+	2) textContent와 innerText 프로퍼티
+		- 요소 내부의 텍스트 조회
+		- 요소 내부의 텍스트 변경		
+		
+노드 생성/삽입/삭제하기
+1. 노드 생성하기
+	1) 노드 객체를 생성하는 주요 메서드
+	createElement("태그명") -> 태그 형태의 document 객체 생성 ( 메모리에만 생성된 상태)
+	createTextNode("텍스트") -> 텍스트 형태의 document 객체 생성
+
+2. 노드 삽입하기
+	1) 부모.appendChild(자식)
+		- 자식 요소를 부모 요소 안의 자식 요소 끝에 추가
+	2) insertBefore(..)
+		- 요소의 중간에 추가할 때 사용
+		- 부모.insertBefore(추가 자식, 기준 자식)		
+
+3. 노드 옮기기
+4. 노드 삭제하기
+	- removeChild(..)
+
+5. 노드 치환하기
+	- replaceChild(...)
