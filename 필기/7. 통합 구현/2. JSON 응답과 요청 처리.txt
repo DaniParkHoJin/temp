@@ -127,3 +127,7 @@ REST API
 
 1. 스프링 시큐리티
 2. Sprign Data JPA
+
+
+application.properties
+-> application.yaml, application.yml

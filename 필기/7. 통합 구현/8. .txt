@@ -1,0 +1,5 @@
+1. 지연로딩 
+1) FetchType.EAGER
+2) FetchType.LAZY
+
+2. 영속성 전이
