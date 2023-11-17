@@ -1,5 +1,32 @@
 연관 관계 매핑
 1. 일대일(1:1) : @OneToOne
+	
+
 2. 일대다(1:N) : @OneToMany
+	회원(One) - 게시글(Mary)
+	연관 관계 주인 설정
+	1) 관계를 설정하고 변경할 수 있는 쪽
+		자식, 외래키를 가지고 있는 쪽 
+
 3. 다대일(N:1) : @ManyToOne
+	가장 많이 사용한다.
+	
+	게시글(Many)과 회원(One)의 관계
+	
+	Many쪽 엔티티로 만들어진 테이블에 One의 컬럼의 기본키가 외래키 추가
+	
+	Member -> getItems() -> BoardData -> toString() -> Member -> toString() -> BoardData -> Member
+											->getMemeber()			->getItems()
+											
+	Lombok::toString -> getter를 호출해서 출력 -> 순환 참조 발생
+	1) ToString 직접 정의 : 멤버 변수로 출력
+	2) Lombok::ToString.Exclude : 출력 배제
+
 4. 다대다(N:M) : @ManyToMany
+	게시글 - 헤시태그
+	
+	글1 태그1, 태그2, 태그3
+	글2 태그2, 태그3, 태그5
+	
+	글1 - 태그1, 태그2, 태그3
+	태그2 - 글1, 글2

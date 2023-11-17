@@ -8,3 +8,5 @@ JPQL(Java Persistence Query Language)
 Querydsl
 
 QuertyDslPredicateExecuter 인터페이스
+
+BooleanBuilder 클래스 -> 논리 연산자 메서드
