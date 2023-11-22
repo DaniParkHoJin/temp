@@ -1,0 +1,73 @@
+1. JWT(Json Web Token)
+	JWT는 RFC7519 웹 표준으로 JSON 객체를 이용해 데이터를 주고 받을 수 있도록한 웹 토큰
+
+	참고) Oauth 인증
+
+	1) JWT는 header, payload, signature로 구성되어 있습니다.
+	2) header : signature를 해싱하기 위한 알고리즘 정보
+	3) payload : 실제로 사용될 데이터
+	4) signature : 토큰의 유효성 검증을 위한 문자열로 이 문자열을 통해 이 토큰이 유효한 토큰인지 검증
+
+	aaaaaa(header).bbbbbb(payload).cccccc(signature)
+
+
+2. 의존성 설정
+
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+	implementation 'io.jsonwebtoken:jjwt-impl:0.12.3'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+
+
+3. application.yml 설정 추가
+
+4. 회원가입 구현하기
+	1) 엔티티 구성하기 - configs/MvcConfig.java
+	2)  configs/SecurityConfig.java
+	3) commons/constants/MemberType.java
+	4) entities/BaseEntity.java
+	5) entities/Member.java
+	6) repositories/MemberRepository.java
+	7) api/members/dto/RequestJoin.java
+	8) models/member/MemberJoinService.java
+	9) models/member/MemberInfo.java
+	10) models/member/MemberInfoService.java
+
+5. JWT 설정
+	1) configs/jwt/JwtProperties.java
+	2) configs/jwt/TokenProvider.java 
+	- 토큰을 생성하고 검증하며 토큰에서 정보를 꺼내 스프링 시큐리티 Authentication 객체를 생성하는 역할을 수행
+	- HMAC = Hash(Message, key) + Message
+	※ hash() 함수는 sha1, sha2, md5등의 알고리즘 사용 
+
+
+	3) configs/jwt/JwtConfig.java :  JWT 설정파일로 TokenProvider에 의존성을 주입하고 빈을 생성하는 역할
+	4) configs/jwt/CustomJwtFilter.java
+		- 액세스토큰을 검증하는 역할을 수행하는 GenericFilterBean을 상속받아 CustomJwtFilter를 작성합니다.
+		- doFilter 메서드 영역 : 토큰의 유효성을 검증하고, 토큰에서 식별자인 username과 해당 토큰에 부여된 권한을 스프링 시큐리티 Authentication 객체를 생성하고 Security Context에 저장
+		- 즉, 토큰 검증을 하고 데이터 베이스에 사용자가 있는지를 조회한다는 것
+
+6. 시큐리티 설정 추가
+	1) configs/jwt/CorsFilterConfig.java
+	2) configs/jwt/JwtAuthenticationEntryPoint.java
+		- AuthenticationEntryPoint 인터페이스 : 인증 실패 시 동작하도록 시큐리티 설정파일 작성 시 지정, 상속을 통해 구현
+	3) configs/SecurityConfig.java
+		- @EnableMethodSecurity : @PreAuthorize 애노테이션 사용을 위해 선언
+		- @EnableWebSecurity : 기본적인 웹보환을 활성화하는 애노테이션
+	
+7. 액세스토큰 인증 API 구현
+	1) api/members/dto/RequestJoin.java
+	2) api/members/dto/ResponseLogin.java
+	3) models/member/MemberLoginService.java
+	4) commons/exceptions/CommonException.java : 공통 예외
+	5) commons/exceptions/BadRequestException.java : 잘못된 요청 관련 예외, 응답 코드를 400으로 고정
+	6) api/commons/JSONData.java : JSON 형식 출력의 통일성을 위해 추가
+	7) api/ApiCommonController.java : 예외를 JSONData 형식으로 공통 처리
+	8) src/main/resoureces/messages 디렉토리에 다음과 같이 3개 메세지 파일을 추가 commons.properties
+	9) errors.properties validations.properties
+	10) commons/Utils.java : 메세지 코드 조회 편의 클래스
+	11) commons/validators/MobileValidator : 휴대폰번호 형식 검증
+	12) commons/validators/PasswordValidator : 비밀번호 복잡성 체크 편의 인터페이스
+	13) repositories/MemberRepository.java - 소스 추가 extends ... , QuerydslPredicateExecutor exists 메서드 추가
+	14) api/members/validator/JoinValidator.java : 회원가입 추가 유효성 검사
+	15) models/member/MemberJoinService.java : 추가 유효성 검사 코드 추가
+
